@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import Test from './Test';
 
 @inject('store')
 @observer
@@ -29,6 +30,7 @@ export default class Home extends Component {
 							Download from GitHub
 						</a>
 					</div>
+          <Test name={10} lastName=' Chi'/>
 				</div>
 
 				<main>
