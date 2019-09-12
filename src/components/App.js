@@ -23,16 +23,9 @@ export default class App extends Component {
 	}
 
 	render() {
-		const {
-			authenticated,
-			authenticating,
-			timeToRefresh,
-			refreshToken
-		} = this.store.appState;
 
 		return (
 			<div className='wrapper'>
-				<Header location={this.props.routing.location} />
 
 				<Route
 					exact
@@ -41,24 +34,6 @@ export default class App extends Component {
 						<LazyRoute {...props} component={import('./Home')} />
 					)}
 				/>
-
-				<Route
-					exact
-					path='/member'
-					render={props => (
-						<LazyRoute {...props} component={import('./Member')} />
-					)}
-				/>
-
-				<Route
-					exact
-					path='/login'
-					render={props => (
-						<LazyRoute {...props} component={import('./Login')} />
-					)}
-				/>
-
-				<Footer />
 			</div>
 		);
 	}
